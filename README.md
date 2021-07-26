@@ -70,3 +70,6 @@ Introduction
 ["Extending MicroPython: Using C for good"](https://www.youtube.com/watch?v=437CZBnK8vI)
 
 ["Writing fast and efficient MicroPython"]("https://www.youtube.com/watch?v=hHec4qL00x0")
+
+[Async on the MicroPython](https://gpiocc.github.io/learn/micropython/esp/2020/06/13/martin-ku-asynchronous-programming-with-uasyncio-in-micropython.html)
+
