@@ -62,3 +62,11 @@ Introduction
 [Wiwei Mao](https://github.com/YiweiMao/pingPongClock/blob/master/pingPongClock.ino)
 [Building an artificial sun that looks unbelievably realistic...DIY Perks](https://www.youtube.com/watch?v=6bqBsHSwPgw)
 
+##Reference
+[CircuitPython: Python on hardware - Dave Astels](https://www.youtube.com/watch?v=rN7kvWuAt7k&t=1510s)
+
+[Using MicroPython in the wild - Damien George](https://www.youtube.com/watch?v=WI-nTf5iM84)
+
+["Extending MicroPython: Using C for good"](https://www.youtube.com/watch?v=437CZBnK8vI)
+
+["Writing fast and efficient MicroPython"]("https://www.youtube.com/watch?v=hHec4qL00x0")

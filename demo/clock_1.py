@@ -7,6 +7,13 @@ np = neopixel.NeoPixel(machine.Pin(16), 256)
 ntptime.host = '3.north-america.pool.ntp.org'
 ntptime.settime()
 
+
+def trigger1(func,start,end, count):
+    while True:
+        if utime.gmtime()[5] > start and utime.gmtime()[5] <=end:
+            for x in range(count):
+                func()
+
 def trigger(start,end):
     while True:
         if utime.gmtime()[5] > start and utime.gmtime()[5] <=end:
