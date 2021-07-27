@@ -1,11 +1,18 @@
-from demo_clock import trigger2, ntptime, utime
+#from demo_clock import ntptime, utime
+import uasyncio as asyncio
+from sched.sched import schedule
+from time import localtime
 import fire
 
-def trigger1(func,hour,start,end, count):
-    start = hour + 4
-    while True:
-        if utime.gmtime()[3] == start and utime.gmtime()[4] >= start and utime.gmtime()[4] <=end:
-            for x in range(count):
-                func()
 
-trigger1(fire.main,6,20,28,3)
+
+async def main():
+    print('Asynchronous test running...')
+    asyncio.create_task(schedule(fire.main_w_clear, hrs=None, mins=range(0, 60, 5)))
+    asyncio.create_task(schedule(fire.main, hrs=None, mins=range(0, 60, 2), times=1))
+    await asyncio.sleep(900)  # Quit after 15 minutes
+
+try:
+    asyncio.run(main())
+finally:
+    _ = asyncio.new_event_loop()

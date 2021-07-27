@@ -11,12 +11,10 @@ import gc
 #https://lodev.org/cgtutor/fire.html
 
 
-
-
-PIXEL_PIN    = 16
-PIXEL_WIDTH   = 32
-PIXEL_HEIGHT  = 8
-FLAME_DIVISOR = 7.77
+#PIXEL_PIN    = 16
+#PIXEL_WIDTH   = 32
+#PIXEL_HEIGHT  = 8
+#FLAME_DIVISOR = 7.77
 
 
 def hue2rgb(p, q, t):
@@ -74,29 +72,38 @@ class FireMatrix:
         y %= self.height
         self.data[y * self.width + x] = value
 
-# Create a color palette of flame colors.
-## avoid running our of memory, build incrementallly
-palette = [HSL_to_RGB(x//3,255,min(255,x*2))for x in range(64)]
-gc.collect()
-palette.extend(HSL_to_RGB(x//3,255,min(255,x*2))for x in range(64,128))
-gc.collect()
-palette.extend(HSL_to_RGB(x//3,255,min(255,x*2))for x in range(128,192))
-gc.collect()
-palette.extend(HSL_to_RGB(x//3,255,min(255,x*2))for x in range(192,256))
-gc.collect()
-
-# Initialize neopixels.
-np = neopixel.NeoPixel(Pin(PIXEL_PIN), PIXEL_WIDTH*PIXEL_HEIGHT)
-np.fill((0,0,0))
-np.write()
-
-# Create fire matrix.
-fire = FireMatrix(PIXEL_WIDTH, PIXEL_HEIGHT+1)
+def clear():
+    np.fill((0,0,0))
+    np.write()
 
 # Main loop:
-
 def main():
-    for p in range(56):
+
+    PIXEL_PIN    = 16
+    PIXEL_WIDTH   = 32
+    PIXEL_HEIGHT  = 8
+    FLAME_DIVISOR = 7.77
+
+    # Create a color palette of flame colors.
+    ## avoid running our of memory, build incrementallly
+    palette = [HSL_to_RGB(x//3,255,min(255,x*2))for x in range(64)]
+    gc.collect()
+    palette.extend(HSL_to_RGB(x//3,255,min(255,x*2))for x in range(64,128))
+    gc.collect()
+    palette.extend(HSL_to_RGB(x//3,255,min(255,x*2))for x in range(128,192))
+    gc.collect()
+    palette.extend(HSL_to_RGB(x//3,255,min(255,x*2))for x in range(192,256))
+    gc.collect()
+
+# Initialize neopixels.
+    np = neopixel.NeoPixel(Pin(PIXEL_PIN), PIXEL_WIDTH*PIXEL_HEIGHT)
+    np.fill((0,0,0))
+    np.write()
+
+# Create fire matrix.
+    fire = FireMatrix(PIXEL_WIDTH, PIXEL_HEIGHT+1)
+    
+    for i in range(256):
     #while True:
         # Set the bottom row to random intensity values (0 to 255).
         for x in range(PIXEL_WIDTH):
@@ -116,3 +123,7 @@ def main():
             for y in range(PIXEL_HEIGHT):
                 np[y * PIXEL_WIDTH + x] = palette[fire.get(x, y)]
         np.write()
+
+def main_w_clear():
+    main()
+    clear()

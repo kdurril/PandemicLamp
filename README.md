@@ -56,10 +56,15 @@ Introduction
 
 ##Inspiration
 [Daniel Rybakken](http://www.danielrybakken.com/Daniel_Rybakken.html)
+
 [Imogene Heap - Strange Loop](https://www.youtube.com/watch?v=p7LJXt88Kmw)
+
 [Jen Lewin Art](https://www.wired.com/video/watch/obsessed-lights)
+
 [YiWeimao](https://yiweimao.github.io/blog/ping_pong_led_clock/#Timing)
+
 [Wiwei Mao](https://github.com/YiweiMao/pingPongClock/blob/master/pingPongClock.ino)
+
 [Building an artificial sun that looks unbelievably realistic...DIY Perks](https://www.youtube.com/watch?v=6bqBsHSwPgw)
 
 ##Reference
@@ -69,7 +74,9 @@ Introduction
 
 ["Extending MicroPython: Using C for good"](https://www.youtube.com/watch?v=437CZBnK8vI)
 
-["Writing fast and efficient MicroPython"]("https://www.youtube.com/watch?v=hHec4qL00x0")
+["Writing fast and efficient MicroPython"](https://www.youtube.com/watch?v=hHec4qL00x0)
+
+["Schedule.md" - Peter Hinch](https://github.com/peterhinch/micropython-async/blob/master/v3/docs/SCHEDULE.md#3-installation)
 
 [Async on the MicroPython](https://gpiocc.github.io/learn/micropython/esp/2020/06/13/martin-ku-asynchronous-programming-with-uasyncio-in-micropython.html)
 
