@@ -14,9 +14,11 @@ This guide is for Ubuntu 20.04. Adapt for your OS.
 
 ##Flash
 1) erase your existing data - this is permanent
+
 ```bash
 esptool.py --chip esp32 --port /dev/ttyUSB0 erase_flash
 ```
+
 2) flash the drive
 Note in the following example, use the absolute path to your bin file
 ```bash
